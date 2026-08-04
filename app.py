@@ -10,7 +10,7 @@ class SimpleHandler(BaseHTTPRequestHandler):
         self.send_response(200)
         self.send_header("Content-type", "text/plain")
         self.end_headers()
-        self.wfile.write(b"Hello from Kubernetes! Version 3.\n")
+        self.wfile.write(b"Hello from Kubernetes mada fakar ! Version 4.\n")
 
 
 if __name__ == "__main__":
