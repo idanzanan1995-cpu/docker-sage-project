@@ -1,0 +1,20 @@
+apiVersion: v1
+kind: Pod
+
+metadata:
+  name: docker-sage-pod
+  namespace: dev
+  labels:
+    app: docker-sage
+
+spec:
+  containers:
+    - name: app
+      image: docker-sage-assignment:v2
+      imagePullPolicy: Never
+      ports:
+        - containerPort: 8080
+
+
+
+

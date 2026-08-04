@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+
+metadata:
+  name: docker-sage-deployment
+  namespace: dev
+
+spec:
+  replicas: 3
+
+  selector:
+    matchLabels:
+      app: docker-sage
+
+  template:
+    metadata:
+      labels:
+        app: docker-sage
+
+    spec:
+      containers:
+        - name: app
+          image: docker-sage-assignment:v2
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 8080
+
+
