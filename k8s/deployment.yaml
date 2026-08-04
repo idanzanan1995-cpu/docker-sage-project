@@ -20,9 +20,10 @@ spec:
     spec:
       containers:
         - name: app
-          image: docker-sage-assignment:v2
+          image: docker-sage-assignment:v3
           imagePullPolicy: Never
           ports:
             - containerPort: 8080
+
 
 
