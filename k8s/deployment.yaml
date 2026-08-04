@@ -20,10 +20,17 @@ spec:
     spec:
       containers:
         - name: app
-          image: docker-sage-assignment:v4
+          image: docker-sage-assignment:v5
           imagePullPolicy: Never
+
           ports:
             - containerPort: 8080
 
+          env:
+            - name: ENV
+              valueFrom:
+                configMapKeyRef:
+                  name: app-config
+                  key: ENV
 
-
+                  
