@@ -8,6 +8,12 @@ metadata:
 spec:
   replicas: 3
 
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxUnavailable: 0
+      maxSurge: 1
+
   selector:
     matchLabels:
       app: docker-sage
@@ -46,4 +52,13 @@ spec:
                 secretKeyRef:
                   name: app-secret
                   key: password
-                  
+
+          resources:
+            requests:
+              cpu: "100m"
+              memory: "64Mi"
+
+            limits:
+              cpu: "500m"
+              memory: "256Mi"
+              
